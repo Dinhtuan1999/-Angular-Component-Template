@@ -1,0 +1,30 @@
+<p>hackernew works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Today's article</h2>
+    <textarea type="text" placeholder="Title" [(ngModel)]="titles" cols="70"></textarea>
+    <br>
+    <textarea type="text" placeholder="Url" [(ngModel)]="urls" cols="70"></textarea>
+    <br><br>
+    <button (click)="add()">ADD</button>
+    <div *ngFor="let art of articles">
+        <h4 [ngStyle]="{color: 'green'}">
+            <b>{{art.title}}</b>
+        </h4>
+        <p><a href="{{art.url}}" target="_blank">{{art.url}}</a></p>
+        <div *ngFor="let art of articles">
+          <a href="{{art.url}}" target="_blank">{{art.title}}</a>
+          <likes></likes>
+        </div>
+        <app-likes></app-likes>
+    </div>
+   
+    
+</body>
+</html>
